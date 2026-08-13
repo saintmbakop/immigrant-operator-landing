@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Restart Penalty Assessment — The Immigrant Operator</title>
+<meta name="description" content="A free 2-minute self-assessment: find out where your Restart Penalty is concentrated across five dimensions — Social, Financial, Professional, Cultural, Psychological.">
+<meta property="og:title" content="The Restart Penalty Assessment">
+<meta property="og:description" content="Immigrants pay an unacknowledged tax across five dimensions when starting over. Take the free 2-minute assessment to see where yours is concentrated.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #E9E6DC;
+    --surface: #FBFAF6;
+    --surface-2: #DFDACB;
+    --text: #1C2530;
+    --text-muted: #5B6570;
+    --border: #D3CDBC;
+    --accent: #9C6D24;
+    --accent-strong: #7C5619;
+    --accent-ink: #1C2530;
+    --accent2: #33475A;
+    --accent2-ink: #FFFFFF;
+
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, 'Liberation Mono', monospace;
+    --font-body: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161B;
+      --surface: #1A2027;
+      --surface-2: #222932;
+      --text: #E9E4D8;
+      --text-muted: #98A2AC;
+      --border: #2A323C;
+      --accent: #D3A24C;
+      --accent-strong: #E7B663;
+      --accent-ink: #14181D;
+      --accent2: #7C9BB8;
+      --accent2-ink: #10161C;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #12161B;
+    --surface: #1A2027;
+    --surface-2: #222932;
+    --text: #E9E4D8;
+    --text-muted: #98A2AC;
+    --border: #2A323C;
+    --accent: #D3A24C;
+    --accent-strong: #E7B663;
+    --accent-ink: #14181D;
+    --accent2: #7C9BB8;
+    --accent2-ink: #10161C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  .wrap { max-width: 700px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 0.9rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 5vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+  }
+
+  .dek {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    max-width: 58ch;
+    margin: 0 0 1.6rem;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+  }
+
+  .instruction {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 2.2rem;
+  }
+
+  .instruction b { color: var(--text); }
+
+  /* ---------- Form ---------- */
+
+  .dimension {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.3rem 1.4rem 1.5rem;
+    margin: 0 0 1.4rem;
+    background: var(--surface);
+  }
+
+  .dimension legend {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0 0.3rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+  }
+
+  .dimension .part {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .question { margin-top: 1.1rem; }
+  .question:first-of-type { margin-top: 1.3rem; }
+
+  .q-text {
+    font-size: 0.92rem;
+    margin: 0 0 0.55rem;
+  }
+
+  .scale {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+  }
+
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+
+  .opt input {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .submit-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 7px;
+    padding: 0.8rem 1.4rem;
+    cursor: pointer;
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  button:hover { filter: brightness(1.06); }
+  button:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+  .submit-note { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ---------- Results ---------- */
+
+  #results { margin-top: 3rem; padding-top: 2.2rem; border-top: 1px solid var(--border); }
+
+  .results-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+  }
+
+  .callout {
+    border: 1px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+    border-radius: 10px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .callout h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin: 0 0 0.3rem;
+  }
+
+  .callout .level-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent2-ink);
+    background: var(--accent2);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .callout p { font-size: 0.94rem; margin: 0 0 0.6rem; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .chapter-ref { color: var(--text-muted); font-style: italic; }
+
+  /* chart */
+
+  .chart-plot {
+    position: relative;
+    height: 190px;
+    margin: 1.6rem 0 0.5rem;
+    padding-left: 2.1rem;
+  }
+
+  .gridline {
+    position: absolute;
+    left: 2.1rem;
+    right: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .gridline span {
+    position: absolute;
+    left: -2.1rem;
+    top: -0.65em;
+    width: 1.7rem;
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bars-row {
+    position: absolute;
+    left: 2.1rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+  }
+
+  .bar-col {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+  }
+
+  .bar-track { width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center; }
+
+  .bar {
+    width: 22px;
+    max-width: 60%;
+    background: var(--accent);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: filter 0.15s ease;
+  }
+
+  .bar:hover, .bar:focus-visible { filter: brightness(1.1); outline: none; }
+
+  .bar-tag {
+    position: absolute;
+    top: -1.35rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .bar-label {
+    margin-top: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .bar-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text);
+    color: var(--surface);
+    padding: 0.4rem 0.65rem;
+    border-radius: 5px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    z-index: 5;
+    text-align: center;
+  }
+
+  .bar-tooltip strong { font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+
+  .bar:hover .bar-tooltip, .bar:focus-visible .bar-tooltip { opacity: 1; }
+
+  .table-toggle { margin: 1.6rem 0 2.2rem; font-size: 0.86rem; }
+
+  .table-toggle summary {
+    cursor: pointer;
+    color: var(--accent2);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .table-toggle table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.8rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .table-toggle th, .table-toggle td {
+    text-align: left;
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+
+  .table-toggle th {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    background: var(--surface-2);
+  }
+
+  .table-toggle td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .table-toggle tr:last-child td { border-bottom: none; }
+
+  /* capture */
+
+  .capture {
+    background: var(--surface-2);
+    border-radius: 10px;
+    padding: 1.4rem 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .capture-head { font-weight: 700; font-size: 0.98rem; margin: 0 0 0.7rem; }
+
+  .capture form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+  .capture input[type="email"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.7rem 0.9rem;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+  }
+
+  .capture input[type="email"]:focus-visible { outline: 2px solid var(--accent2); outline-offset: 1px; }
+
+  .capture-status { font-size: 0.85rem; margin-top: 0.6rem; color: var(--text); min-height: 1.2em; }
+
+  .retake-row { margin-top: 1.8rem; text-align: center; }
+
+  .retake-row button {
+    background: transparent;
+    color: var(--accent2);
+    border: 1px solid var(--border);
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 520px) {
+    .scale { gap: 0.7rem; }
+    .bar { width: 16px; }
+    .chart-plot { padding-left: 1.7rem; }
+    .gridline { left: 1.7rem; }
+    .gridline span { left: -1.7rem; width: 1.4rem; }
+    .bars-row { left: 1.7rem; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <p class="eyebrow">Free Assessment &middot; From The Immigrant Operator</p>
+  <h1>The Restart Penalty Assessment</h1>
+  <p class="dek">Immigrants pay an unacknowledged tax across five dimensions when restarting in a new country. Answer 15 short statements — about two minutes — to see where your weight is concentrated right now.</p>
+
+  <div class="chips">
+    <span class="chip">Social</span>
+    <span class="chip">Financial</span>
+    <span class="chip">Professional</span>
+    <span class="chip">Cultural</span>
+    <span class="chip">Psychological</span>
+  </div>
+
+  <p class="instruction">For each statement, choose how true it is for you right now: <b>1 = Strongly disagree</b> through <b>5 = Strongly agree</b>. Answer honestly rather than aspirationally — this measures where you are, not where you want to be.</p>
+
+  <form id="assessment">
+
+    <fieldset class="dimension">
+      <legend>Social <span class="part">Part 1 of 5</span></legend>
+
+      <div class="question">
+        <p class="q-text">I've had to rebuild my closest relationships and support network more than once in my life.</p>
+        <div class="scale" role="radiogroup" aria-label="I've had to rebuild my closest relationships and support network more than once in my life.">
+          <label class="opt"><input type="radio" name="soc1" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="soc1" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="soc1" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="soc1" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="soc1" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I often feel like I'm navigating rooms — social or professional — that weren't built with someone like me in mind.</p>
+        <div class="scale" role="radiogroup" aria-label="I often feel like I'm navigating rooms that weren't built with someone like me in mind.">
+          <label class="opt"><input type="radio" name="soc2" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="soc2" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="soc2" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="soc2" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="soc2" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I hesitate to ask for help because I don't have the built-in network others seem to start with.</p>
+        <div class="scale" role="radiogroup" aria-label="I hesitate to ask for help because I don't have the built-in network others seem to start with.">
+          <label class="opt"><input type="radio" name="soc3" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="soc3" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="soc3" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="soc3" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="soc3" value="5" required><span>5</span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="dimension">
+      <legend>Financial <span class="part">Part 2 of 5</span></legend>
+
+      <div class="question">
+        <p class="q-text">I feel like I'm constantly restarting my financial progress from zero, even after real wins.</p>
+        <div class="scale" role="radiogroup" aria-label="I feel like I'm constantly restarting my financial progress from zero, even after real wins.">
+          <label class="opt"><input type="radio" name="fin1" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="fin1" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="fin1" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="fin1" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="fin1" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">A significant share of what I earn supports people beyond my own household.</p>
+        <div class="scale" role="radiogroup" aria-label="A significant share of what I earn supports people beyond my own household.">
+          <label class="opt"><input type="radio" name="fin2" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="fin2" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="fin2" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="fin2" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="fin2" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I've had to rebuild financial credibility — credit, assets, reputation — from scratch in this system.</p>
+        <div class="scale" role="radiogroup" aria-label="I've had to rebuild financial credibility from scratch in this system.">
+          <label class="opt"><input type="radio" name="fin3" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="fin3" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="fin3" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="fin3" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="fin3" value="5" required><span>5</span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="dimension">
+      <legend>Professional <span class="part">Part 3 of 5</span></legend>
+
+      <div class="question">
+        <p class="q-text">My prior experience, credentials, or title didn't fully carry over when I started here.</p>
+        <div class="scale" role="radiogroup" aria-label="My prior experience, credentials, or title didn't fully carry over when I started here.">
+          <label class="opt"><input type="radio" name="pro1" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="pro1" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="pro1" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="pro1" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="pro1" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I've had to prove my competence more times, and more thoroughly, than peers with similar skill.</p>
+        <div class="scale" role="radiogroup" aria-label="I've had to prove my competence more times, and more thoroughly, than peers with similar skill.">
+          <label class="opt"><input type="radio" name="pro2" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="pro2" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="pro2" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="pro2" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="pro2" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I feel behind my "true" career stage because of time lost to starting over.</p>
+        <div class="scale" role="radiogroup" aria-label="I feel behind my true career stage because of time lost to starting over.">
+          <label class="opt"><input type="radio" name="pro3" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="pro3" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="pro3" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="pro3" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="pro3" value="5" required><span>5</span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="dimension">
+      <legend>Cultural <span class="part">Part 4 of 5</span></legend>
+
+      <div class="question">
+        <p class="q-text">I regularly adjust how I speak or act to be understood or accepted in professional spaces.</p>
+        <div class="scale" role="radiogroup" aria-label="I regularly adjust how I speak or act to be understood or accepted in professional spaces.">
+          <label class="opt"><input type="radio" name="cul1" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="cul1" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="cul1" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="cul1" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="cul1" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I carry more than one cultural playbook and I'm always deciding which one applies in the moment.</p>
+        <div class="scale" role="radiogroup" aria-label="I carry more than one cultural playbook and I'm always deciding which one applies in the moment.">
+          <label class="opt"><input type="radio" name="cul2" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="cul2" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="cul2" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="cul2" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="cul2" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I feel a quiet pressure to represent or explain my culture, even when I didn't ask for that role.</p>
+        <div class="scale" role="radiogroup" aria-label="I feel a quiet pressure to represent or explain my culture, even when I didn't ask for that role.">
+          <label class="opt"><input type="radio" name="cul3" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="cul3" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="cul3" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="cul3" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="cul3" value="5" required><span>5</span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="dimension">
+      <legend>Psychological <span class="part">Part 5 of 5</span></legend>
+
+      <div class="question">
+        <p class="q-text">I struggle to slow down, even when nothing urgent is in front of me.</p>
+        <div class="scale" role="radiogroup" aria-label="I struggle to slow down, even when nothing urgent is in front of me.">
+          <label class="opt"><input type="radio" name="psy1" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="psy1" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="psy1" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="psy1" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="psy1" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">Rest feels unproductive, or even unsafe, even when I've clearly earned it.</p>
+        <div class="scale" role="radiogroup" aria-label="Rest feels unproductive, or even unsafe, even when I've clearly earned it.">
+          <label class="opt"><input type="radio" name="psy2" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="psy2" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="psy2" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="psy2" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="psy2" value="5" required><span>5</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-text">I still operate like I'm in survival mode, even in situations that are objectively stable now.</p>
+        <div class="scale" role="radiogroup" aria-label="I still operate like I'm in survival mode, even in situations that are objectively stable now.">
+          <label class="opt"><input type="radio" name="psy3" value="1" required><span>1</span></label>
+          <label class="opt"><input type="radio" name="psy3" value="2" required><span>2</span></label>
+          <label class="opt"><input type="radio" name="psy3" value="3" required><span>3</span></label>
+          <label class="opt"><input type="radio" name="psy3" value="4" required><span>4</span></label>
+          <label class="opt"><input type="radio" name="psy3" value="5" required><span>5</span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="submit-row">
+      <button type="submit">See My Results</button>
+      <span class="submit-note">Scored instantly, in your browser.</span>
+    </div>
+  </form>
+
+  <section id="results" hidden>
+    <p class="results-eyebrow">Your Results</p>
+
+    <div class="callout">
+      <h2>Your dominant tax: <span id="dominant-name"></span></h2>
+      <span class="level-tag" id="dominant-level"></span>
+      <p id="dominant-blurb"></p>
+      <p class="chapter-ref" id="dominant-chapter"></p>
+    </div>
+
+    <div class="chart-plot">
+      <div class="gridline" style="bottom: 100%;"><span>15</span></div>
+      <div class="gridline" style="bottom: 66.67%;"><span>10</span></div>
+      <div class="gridline" style="bottom: 33.33%;"><span>5</span></div>
+      <div class="gridline" style="bottom: 0%;"><span>0</span></div>
+      <div class="bars-row" id="chart-bars"></div>
+    </div>
+
+    <details class="table-toggle">
+      <summary>View exact scores as a table</summary>
+      <table>
+        <thead><tr><th>Dimension</th><th>Score</th><th>Level</th></tr></thead>
+        <tbody id="score-table-body"></tbody>
+      </table>
+    </details>
+
+    <div class="capture">
+      <p class="capture-head">Get the full breakdown + early access when the book launches</p>
+      <form id="capture-form">
+        <input type="email" id="capture-email" placeholder="you@email.com" aria-label="Email address" required>
+        <button type="submit">Send My Breakdown</button>
+      </form>
+      <p class="capture-status" id="capture-status" aria-live="polite"></p>
+    </div>
+
+    <div class="retake-row">
+      <button type="button" id="retake">Retake the assessment</button>
+    </div>
+  </section>
+
+  <footer>
+    The Restart Penalty Assessment &middot; from THE IMMIGRANT OPERATOR
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  // ---- Supabase wiring -----------------------------------------------
+  // Create a free project at supabase.com, run the SQL from README.md,
+  // then replace these two values with your project's URL and anon key
+  // (Project Settings -> API). Both are safe to expose client-side —
+  // the anon key only works within the RLS policy defined in README.md.
+  var SUPABASE_URL = 'YOUR_SUPABASE_URL';
+  var SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  // ----------------------------------------------------------------------
+
+  var dims = [
+    {
+      key: 'soc',
+      name: 'Social',
+      chapter: 'Chapter 1 — "The Weight of Starting Over"',
+      blurb: "The Social tax shows up as rebuilding trust, community, and belonging from scratch, often more than once. Chapter 1 walks through why that weight is invisible to everyone around you, and how to stop treating it as a personal failure."
+    },
+    {
+      key: 'fin',
+      name: 'Financial',
+      chapter: 'Chapter 10 — "From Labor to Leverage"',
+      blurb: "The Financial tax is the cost of restarting your net worth while often supporting people beyond yourself. Chapter 10 is where the book turns this from a treadmill into a system that compounds."
+    },
+    {
+      key: 'pro',
+      name: 'Professional',
+      chapter: 'Chapter 4 — "The Identity Crisis Nobody Talks About"',
+      blurb: "The Professional tax is having your experience discounted and having to re-prove competence that should already be established. Chapter 4 names this before Part II shows you how to rebuild authority on your own terms."
+    },
+    {
+      key: 'cul',
+      name: 'Cultural',
+      chapter: 'Introduction — "The Invisible Weight"',
+      blurb: "The Cultural tax is the constant translation — code-switching between the playbook you grew up with and the one the room expects. The Introduction names this directly so you can stop carrying it silently."
+    },
+    {
+      key: 'psy',
+      name: 'Psychological',
+      chapter: 'Chapter 2 — "The Survival Trap"',
+      blurb: "The Psychological tax is a nervous system still braced for a crisis that isn't there anymore. Chapter 2 is the book's argument for why the habits that once saved you are now the ones holding you back."
+    }
+  ];
+
+  var form = document.getElementById('assessment');
+  var results = document.getElementById('results');
+  var lastScores = null;
+  var lastDominantKey = null;
+
+  function levelOf(score) {
+    if (score <= 7) return 'Low';
+    if (score <= 11) return 'Moderate';
+    return 'High';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var scores = {};
+    dims.forEach(function (d) {
+      var sum = 0;
+      for (var i = 1; i <= 3; i++) {
+        var checked = form.querySelector('input[name="' + d.key + i + '"]:checked');
+        sum += checked ? Number(checked.value) : 0;
+      }
+      scores[d.key] = sum;
+    });
+
+    var dominant = dims[0];
+    dims.forEach(function (d) {
+      if (scores[d.key] > scores[dominant.key]) dominant = d;
+    });
+
+    lastScores = scores;
+    lastDominantKey = dominant.key;
+
+    document.getElementById('dominant-name').textContent = dominant.name;
+    document.getElementById('dominant-blurb').textContent = dominant.blurb;
+    document.getElementById('dominant-chapter').textContent = dominant.chapter;
+    document.getElementById('dominant-level').textContent =
+      levelOf(scores[dominant.key]) + ' · ' + scores[dominant.key] + ' / 15';
+
+    var chart = document.getElementById('chart-bars');
+    var tbody = document.getElementById('score-table-body');
+    chart.textContent = '';
+    tbody.textContent = '';
+
+    dims.forEach(function (d) {
+      var score = scores[d.key];
+      var level = levelOf(score);
+      var pct = Math.round((score / 15) * 100);
+
+      var col = document.createElement('div');
+      col.className = 'bar-col';
+
+      var track = document.createElement('div');
+      track.className = 'bar-track';
+
+      var bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.style.height = pct + '%';
+      bar.tabIndex = 0;
+      bar.setAttribute('role', 'img');
+      bar.setAttribute('aria-label', d.name + ': ' + score + ' of 15, ' + level);
+
+      var tooltip = document.createElement('div');
+      tooltip.className = 'bar-tooltip';
+      var tStrong = document.createElement('strong');
+      tStrong.textContent = score + ' / 15';
+      var tSpan = document.createElement('span');
+      tSpan.textContent = d.name + ' · ' + level;
+      tooltip.appendChild(tStrong);
+      tooltip.appendChild(tSpan);
+      bar.appendChild(tooltip);
+
+      if (d.key === dominant.key) {
+        var tag = document.createElement('span');
+        tag.className = 'bar-tag';
+        tag.textContent = score;
+        bar.appendChild(tag);
+      }
+
+      track.appendChild(bar);
+      col.appendChild(track);
+
+      var label = document.createElement('span');
+      label.className = 'bar-label';
+      label.textContent = d.name;
+      col.appendChild(label);
+
+      chart.appendChild(col);
+
+      var tr = document.createElement('tr');
+      var td1 = document.createElement('td');
+      td1.textContent = d.name;
+      var td2 = document.createElement('td');
+      td2.className = 'num';
+      td2.textContent = score + ' / 15';
+      var td3 = document.createElement('td');
+      td3.textContent = level;
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      tbody.appendChild(tr);
+    });
+
+    results.hidden = false;
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.getElementById('capture-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var statusEl = document.getElementById('capture-status');
+    var emailEl = document.getElementById('capture-email');
+
+    if (SUPABASE_URL.indexOf('YOUR_') === 0) {
+      statusEl.textContent = 'Preview only — Supabase isn\'t connected yet.';
+      return;
+    }
+
+    statusEl.textContent = 'Sending…';
+
+    fetch(SUPABASE_URL + '/rest/v1/signups', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        email: emailEl.value,
+        dominant_dimension: lastDominantKey,
+        scores: lastScores
+      })
+    }).then(function (res) {
+      if (res.ok) {
+        statusEl.textContent = "You're on the list — check your inbox soon.";
+        emailEl.value = '';
+      } else {
+        statusEl.textContent = 'Something went wrong — please try again.';
+      }
+    }).catch(function () {
+      statusEl.textContent = 'Something went wrong — please try again.';
+    });
+  });
+
+  document.getElementById('retake').addEventListener('click', function () {
+    form.reset();
+    results.hidden = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
