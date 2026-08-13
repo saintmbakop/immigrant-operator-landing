@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — The Immigrant Operator</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #E9E6DC;
+    --surface: #FBFAF6;
+    --text: #1C2530;
+    --text-muted: #5B6570;
+    --border: #D3CDBC;
+    --accent: #9C6D24;
+    --accent-ink: #1C2530;
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, 'Liberation Mono', monospace;
+    --font-body: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161B;
+      --surface: #1A2027;
+      --text: #E9E4D8;
+      --text-muted: #98A2AC;
+      --border: #2A323C;
+      --accent: #D3A24C;
+      --accent-ink: #14181D;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .card { max-width: 440px; }
+
+  .code {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    margin: 0 0 0.8rem;
+    text-wrap: balance;
+  }
+
+  p { color: var(--text-muted); font-size: 0.96rem; margin: 0 0 1.6rem; }
+
+  a.button {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.92rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 0.75rem 1.4rem;
+    border-radius: 7px;
+    text-decoration: none;
+  }
+
+  a.button:hover { filter: brightness(1.06); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="code">404</p>
+    <h1>This page took a wrong turn.</h1>
+    <p>The page you're looking for doesn't exist — but the Restart Penalty assessment does.</p>
+    <a class="button" href="/">Take me there</a>
+  </div>
+</body>
+</html>
