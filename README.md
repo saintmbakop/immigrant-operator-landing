@@ -4,7 +4,7 @@ Landing page / lead magnet for **THE IMMIGRANT OPERATOR**. A static, single-page
 site — no build step, no framework. `index.html` is the entire site.
 
 Live at: **https://theimmigrantoperator.com** (once DNS is pointed — see below)
-Interim GitHub Pages URL: `https://<your-username>.github.io/immigrant-operator-landing/`
+Interim GitHub Pages URL: **https://saintmbakop.github.io/immigrant-operator-landing/**
 
 ## Connecting the domain
 
@@ -19,7 +19,7 @@ Once the domain is registered, add these DNS records at your registrar:
 | A     | @    | 185.199.109.153         |
 | A     | @    | 185.199.110.153         |
 | A     | @    | 185.199.111.153         |
-| CNAME | www  | `<your-username>.github.io` |
+| CNAME | www  | `saintmbakop.github.io` |
 
 DNS propagation is usually minutes, sometimes up to a few hours. Once it
 resolves, GitHub auto-provisions HTTPS for the domain (may take up to ~1 hour
