@@ -4,7 +4,7 @@
 --
 -- The webhook secret below must match the SIGNUP_WEBHOOK_SECRET set via
 -- `supabase secrets set` for the function, and the anon key is the same
--- public key already used in index.html — safe to store here since this
+-- public key already used in index.html. Safe to store here since this
 -- runs server-side, never exposed to visitors.
 
 create extension if not exists pg_net with schema extensions;
@@ -19,7 +19,7 @@ begin
     url := 'https://penzbxcgjxjgrcclyect.supabase.co/functions/v1/send-breakdown',
     headers := jsonb_build_object(
       'Content-Type', 'application/json',
-      'Authorization', 'Bearer YOUR_SUPABASE_ANON_KEY',
+      'Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbnpieGNnanhqZ3JjY2x5ZWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY2NTcxMzgsImV4cCI6MjEwMjIzMzEzOH0.GhTXwUib5eVBWMdB9Py_v9ye1Oi4zjZkecWxA_evgUM',
       'x-webhook-secret', 'b2f7837c0ddee7cd83b32dfd3ce2f4a6fb0534b8c17fa243'
     ),
     body := jsonb_build_object('record', row_to_json(new))
