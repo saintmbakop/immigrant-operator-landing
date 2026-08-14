@@ -29,35 +29,35 @@ const DIMENSIONS: Dimension[] = [
     name: "Social",
     chapter: 'Chapter 1: "The Weight of Starting Over"',
     blurb:
-      "The Social tax shows up as rebuilding trust, community, and belonging from scratch, often more than once. Chapter 1 walks through why that weight is invisible to everyone around you, and how to stop treating it as a personal failure.",
+      "The Social tax means rebuilding your network from zero, every relationship, every ounce of trust, every professional connection re-earned inside a new cultural context. Chapter 1 walks through why that weight is invisible to everyone around you, and how to stop treating it as a personal failure.",
   },
   {
     key: "fin",
     name: "Financial",
     chapter: 'Chapter 10: "From Labor to Leverage"',
     blurb:
-      "The Financial tax is the cost of restarting your net worth while often supporting people beyond yourself. Chapter 10 is where the book turns this from a treadmill into a system that compounds.",
+      "The Financial tax is that wealth, credit history, and financial standing rarely transfer, most immigrants restart from a clean, or negative, financial slate no matter what they had before. Chapter 10 is where the book turns this from a treadmill into a system that compounds.",
   },
   {
     key: "pro",
     name: "Professional",
     chapter: 'Chapter 4: "The Identity Crisis Nobody Talks About"',
     blurb:
-      "The Professional tax is having your experience discounted and having to re-prove competence that should already be established. Chapter 4 names this before Part II shows you how to rebuild authority on your own terms.",
+      "The Professional tax is having credentials and experience earned elsewhere go undervalued or unrecognized, often leaving you overqualified for the only roles actually open to you early on. Chapter 4 names this before Part II shows you how to rebuild authority on your own terms.",
   },
   {
     key: "cul",
     name: "Cultural",
     chapter: 'Introduction: "The Invisible Weight"',
     blurb:
-      "The Cultural tax is the constant translation: code-switching between the playbook you grew up with and the one the room expects. The Introduction names this directly so you can stop carrying it silently.",
+      "The Cultural tax is learning an entirely new set of unwritten social and professional norms, how to communicate, lead, disagree, and sound ambitious, from scratch and under pressure. The Introduction names this directly so you can stop carrying it silently.",
   },
   {
     key: "psy",
     name: "Psychological",
     chapter: 'Chapter 2: "The Survival Trap"',
     blurb:
-      "The Psychological tax is a nervous system still braced for a crisis that isn't there anymore. Chapter 2 is the book's argument for why the habits that once saved you are now the ones holding you back.",
+      "The Psychological tax is carrying the weight of proving yourself in an environment that wasn't designed with you in mind, while managing the emotional cost of distance from home running quietly underneath everything else. Chapter 2 is the book's argument for why the habits that once saved you are now the ones holding you back.",
   },
 ];
 
