@@ -69,19 +69,43 @@ function levelOf(score: number): string {
 
 function renderEmail(email: string, dominantKey: string, scores: Record<string, number>) {
   const dominant = DIMENSIONS.find((d) => d.key === dominantKey) ?? DIMENSIONS[0];
-  const rows = DIMENSIONS.map((d) => {
+
+  // Table-based bar chart. No CSS animation, no flexbox, no SVG. Nested
+  // tables with a colored td sized by percentage width is the one bar-chart
+  // technique that reliably survives Outlook's rendering engine as well as
+  // every modern client.
+  const bars = DIMENSIONS.map((d) => {
     const score = scores?.[d.key] ?? 0;
-    return `<tr><td style="padding:6px 12px 6px 0;color:#5B6570;">${d.name}</td><td style="padding:6px 0;font-variant-numeric:tabular-nums;">${score} / 15 (${levelOf(score)})</td></tr>`;
+    const pct = Math.max(4, Math.round((score / 15) * 100)); // floor width so a score of 0 still shows a sliver
+    return `
+      <tr>
+        <td style="width:88px;padding:5px 8px 5px 0;font-size:12px;color:#5B6570;vertical-align:middle;">${d.name}</td>
+        <td style="vertical-align:middle;padding:5px 0;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#E4DFCF;border-radius:3px;">
+            <tr>
+              <td width="${pct}%" bgcolor="#9C6D24" style="background-color:#9C6D24;height:12px;line-height:12px;font-size:1px;border-radius:3px;">&nbsp;</td>
+              <td style="line-height:12px;font-size:1px;">&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+        <td style="width:46px;padding:5px 0 5px 8px;font-size:12px;color:#1C2530;text-align:right;vertical-align:middle;">${score}/15</td>
+      </tr>`;
   }).join("");
 
   const html = `
   <div style="font-family:-apple-system,'Segoe UI',Arial,sans-serif;max-width:520px;margin:0 auto;color:#1C2530;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 0 24px;">
+      <tr><td align="center">
+        <img src="https://theimmigrantoperator.com/assets/cover.png" width="140" alt="THE IMMIGRANT OPERATOR, by Saint Mbakop" style="display:block;width:140px;height:auto;border-radius:2px;">
+      </td></tr>
+    </table>
+
     <p style="font-family:ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#9C6D24;margin:0 0 12px;">Your Restart Penalty Breakdown</p>
     <h1 style="font-size:22px;font-weight:400;margin:0 0 16px;">Your dominant tax: ${dominant.name}</h1>
     <p style="font-size:15px;line-height:1.6;margin:0 0 16px;">${dominant.blurb}</p>
     <p style="font-size:14px;font-style:italic;color:#5B6570;margin:0 0 28px;">${dominant.chapter}</p>
 
-    <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:28px;">${rows}</table>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-bottom:28px;">${bars}</table>
 
     <hr style="border:none;border-top:1px solid #D3CDBC;margin:0 0 24px;">
 
