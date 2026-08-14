@@ -69,6 +69,46 @@ directly (`fetch`, no SDK). To activate it:
 The anon key is meant to be public and safe to ship in client-side code; the
 RLS policy above is what keeps the data safe (insert-only, no read access).
 
+## Sending the breakdown email (Resend)
+
+Signup capture works without this, but no email actually sends until it's
+set up. The pieces already built and sitting in this repo:
+
+- `supabase/functions/send-breakdown/index.ts`, an Edge Function that composes
+  the personalized breakdown and sends it via [Resend](https://resend.com)
+- `supabase/trigger.sql`, a database trigger that calls the function the
+  moment a row is inserted into `signups`
+
+**What you need to do:**
+
+1. Sign up at [resend.com](https://resend.com) (free, no card required).
+2. Verify a sending domain: **Domains → Add Domain**, enter
+   `theimmigrantoperator.com` (or a subdomain like `mail.theimmigrantoperator.com`),
+   then add the DNS records Resend shows you at your registrar (same place
+   the GitHub Pages A records live). Without a verified domain, Resend will
+   only deliver to your own account email, not to real visitors.
+3. Create an API key: **API Keys → Create API Key**.
+4. In a terminal, run `npx supabase login` and complete the browser sign-in.
+   This only needs to happen once, and the session stays local to this
+   machine, nothing needs to be shared for it.
+
+**Once that's done**, deployment is just:
+
+```
+npx supabase link --project-ref penzbxcgjxjgrcclyect
+npx supabase secrets set RESEND_API_KEY=your_key_here
+npx supabase secrets set SIGNUP_WEBHOOK_SECRET=b2f7837c0ddee7cd83b32dfd3ce2f4a6fb0534b8c17fa243
+npx supabase secrets set SENDER_EMAIL=hello@theimmigrantoperator.com
+npx supabase functions deploy send-breakdown
+```
+
+Then, in the Supabase SQL Editor, run `supabase/trigger.sql` — but first
+replace `YOUR_SUPABASE_ANON_KEY` inside it with the same anon key already
+used in `index.html`.
+
+From then on, every signup gets emailed automatically. No further code
+changes needed.
+
 ## Local preview
 
 No build step: just open `index.html` in a browser, or serve the folder:
