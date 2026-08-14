@@ -1,9 +1,9 @@
 # The Restart Penalty Assessment
 
 Landing page / lead magnet for **THE IMMIGRANT OPERATOR**. A static, single-page
-site — no build step, no framework. `index.html` is the entire site.
+site (no build step, no framework). `index.html` is the entire site.
 
-Live at: **https://theimmigrantoperator.com** (once DNS is pointed — see below)
+Live at: **https://theimmigrantoperator.com** (once DNS is pointed, see below)
 Interim GitHub Pages URL: **https://saintmbakop.github.io/immigrant-operator-landing/**
 
 ## Connecting the domain
@@ -23,7 +23,7 @@ Once the domain is registered, add these DNS records at your registrar:
 
 DNS propagation is usually minutes, sometimes up to a few hours. Once it
 resolves, GitHub auto-provisions HTTPS for the domain (may take up to ~1 hour
-after DNS first resolves) — no action needed beyond adding the records.
+after DNS first resolves). No action needed beyond adding the records.
 
 ## Connecting email capture (Supabase)
 
@@ -44,7 +44,7 @@ directly (`fetch`, no SDK). To activate it:
 
    alter table public.signups enable row level security;
 
-   -- Anonymous visitors may INSERT only — they can never read, update,
+   -- Anonymous visitors may INSERT only. They can never read, update,
    -- or delete rows. Do not add a select policy for the anon role, or
    -- every visitor's email becomes publicly readable.
    create policy "Allow public inserts"
@@ -63,7 +63,7 @@ directly (`fetch`, no SDK). To activate it:
    var SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
    ```
 
-   and replace both placeholder values. Commit and push — GitHub Pages
+   and replace both placeholder values. Commit and push. GitHub Pages
    redeploys automatically on every push to `main`.
 
 The anon key is meant to be public and safe to ship in client-side code; the
@@ -71,7 +71,7 @@ RLS policy above is what keeps the data safe (insert-only, no read access).
 
 ## Local preview
 
-No build step — just open `index.html` in a browser, or serve the folder:
+No build step: just open `index.html` in a browser, or serve the folder:
 
 ```
 npx serve .
